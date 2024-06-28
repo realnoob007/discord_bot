@@ -38,7 +38,7 @@ class discordClient(discord.Client):
         self.isPrivate = False
         self.is_replying_all = os.getenv("REPLYING_ALL")
         self.replying_all_discord_channel_id = os.getenv("REPLYING_ALL_DISCORD_CHANNEL_ID")
-        self.openai_client = AsyncOpenAI(api_key=os.getenv("OPENAI_KEY"))
+        self.openai_client = AsyncOpenAI(base_url=os.getenv("BASE_URL"),api_key=os.getenv("OPENAI_KEY"))
 
         config_dir = os.path.abspath(f"{__file__}/../../")
         prompt_name = 'system_prompt.txt'
